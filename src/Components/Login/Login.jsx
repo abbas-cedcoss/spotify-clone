@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import { AUTH_ENDPOINT, REDIRECT_URI, CLIENT_ID, RESPONSE_TYPE } from '../../environment';
+import { AUTH_ENDPOINT, REDIRECT_URI, CLIENT_ID, RESPONSE_TYPE, SCOPE } from '../../environment';
 
 const Login = () => {
 
@@ -9,21 +9,29 @@ const Login = () => {
     const [token, setToken] = useState("")
 
     useEffect(() => {
-        const hash = window.location.hash
-        let token = window.localStorage.getItem("token")
-
-        if (!token && hash) {
-            token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
-
-            window.location.hash = ""
-            window.localStorage.setItem("token", token);
-            navigate('/panel/home');
-        }
-        else{
-            console.log('first')
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const code = urlParams.get('code');
+        if (isNaN(code)) {
+            window.localStorage.setItem('code', code);
         }
 
-        setToken(token);
+
+        // const hash = window.location.hash
+        // let token = window.localStorage.getItem("token")
+
+        // if (!token && hash) {
+        //     token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
+
+        //     window.location.hash = ""
+        //     window.localStorage.setItem("token", token);
+        //     navigate('/panel/home');
+        // }
+        // else{
+        //     console.log('first')
+        // }
+
+        // setToken(token);
 
     }, [])
 
@@ -82,7 +90,7 @@ const Login = () => {
 
 
                     <Button type="primary" block onClick={() => {
-                        window.open(`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`, "_self");
+                        window.open(`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}&show_dialog=true`, "_self");
                     }}>
                         Login
                     </Button>
