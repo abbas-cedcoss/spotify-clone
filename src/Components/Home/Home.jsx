@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Layout, Menu } from 'antd';
 import { renderNavBar } from './homehelper';
+import getnewreleases from './homeApi';
+import { notifications } from '../../services/notifications';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -9,6 +11,17 @@ function Home() {
   function onNavBarChange(route = '') {
     console.log(route)
   }
+
+  async function getNewReleases() {
+    let data = await getnewreleases({ limit: '5' });
+    if (data.hasOwnProperty('error'))
+      notifications.error('Failed!', data?.error?.message);
+  }
+
+  useEffect(() => {
+    getNewReleases();
+  }, [])
+
   return <Layout>
     <Sider
       breakpoint={{
