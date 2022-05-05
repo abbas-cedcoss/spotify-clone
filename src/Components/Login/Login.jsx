@@ -16,7 +16,8 @@ const Login = () => {
             token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
 
             window.location.hash = ""
-            window.localStorage.setItem("token", token)
+            window.localStorage.setItem("token", token);
+            navigate('/panel/home');
         }
         else{
             console.log('first')
