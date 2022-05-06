@@ -53,6 +53,10 @@ body {
     color: red;
 } */
 
+.core-search{
+    margin-top: 2%;
+}
+
 @media screen and (max-width: 540px) {
 
     .ant-layout-sider-children, .logo {
