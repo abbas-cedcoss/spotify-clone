@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import { AUTH_ENDPOINT, REDIRECT_URI, CLIENT_ID, RESPONSE_TYPE } from '../../environment';
+import { AUTH_ENDPOINT, REDIRECT_URI, CLIENT_ID, RESPONSE_TYPE, isLive } from '../../environment';
 
 const Login = () => {
 
@@ -19,6 +19,7 @@ const Login = () => {
         }
         if (token != null)
             navigate('/panel/home');
+            console.log(isLive)
     }, [])
 
     return (
