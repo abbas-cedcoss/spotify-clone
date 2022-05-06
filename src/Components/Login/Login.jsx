@@ -6,7 +6,7 @@ import { AUTH_ENDPOINT, REDIRECT_URI, CLIENT_ID, RESPONSE_TYPE } from '../../env
 const Login = () => {
 
     const navigate = useNavigate();
-    const [token, setToken] = useState("")
+    // const [token, setToken] = useState("")
 
     useEffect(() => {
         const hash = window.location.hash
@@ -17,13 +17,11 @@ const Login = () => {
 
             window.location.hash = ""
             window.localStorage.setItem("token", token);
+        }
+        if (token != null)
             navigate('/panel/home');
-        }
-        else{
-            console.log('first')
-        }
 
-        setToken(token);
+        // setToken(token);
 
     }, [])
 
@@ -79,8 +77,6 @@ const Login = () => {
                         span: 16,
                     }}
                 >
-
-
                     <Button type="primary" block onClick={() => {
                         window.open(`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`, "_self");
                     }}>

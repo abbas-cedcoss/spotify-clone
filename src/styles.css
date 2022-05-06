@@ -8,6 +8,28 @@
     color: white;
 }
 
-.custom-menu {
-    /* background-color: red; */
+.header-on-home {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
 }
+
+.logo {
+    height: 4.2em;
+    margin: 20%;
+  }
+
+/* .slick-arrow.slick-prev {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: red;
+    color: red;
+}
+
+.slick-arrow.slick-next {
+    background-color: red;
+    color: red;
+} */
