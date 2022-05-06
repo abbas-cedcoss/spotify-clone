@@ -7,13 +7,13 @@ export function renderNavBar(onClick = () => { }) {
             key: 0,
             icon: React.createElement(CustomerServiceOutlined),
             label: 'Discover',
-            onClick: onClick.bind(this, '/panel/discover')
+            onClick: onClick.bind(this, 'discover')
         },
         {
             key: 1,
             icon: React.createElement(SearchOutlined),
             label: 'Search',
-            onClick: onClick.bind(this, '/panel/discover')
+            onClick: onClick.bind(this, 'search')
         },
         {
             key: 2,

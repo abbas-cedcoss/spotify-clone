@@ -1,3 +1,9 @@
+html,
+body {
+    margin: 0px;
+    height: 100%;
+}
+
 .core-container {
     min-height: 100vh;
     display: flex;
@@ -6,6 +12,10 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+}
+
+.ant-layout-sider-children {
+    background-color: rgba(87, 79, 216, 255) !important;
 }
 
 .header-on-home {
@@ -42,3 +52,18 @@
     background-color: red;
     color: red;
 } */
+
+@media screen and (max-width: 540px) {
+
+    .ant-layout-sider-children, .logo {
+        width: 50px !important;
+    }
+
+    .ant-layout-sider,
+    .ant-layout-sider-dark {
+        flex: none !important;
+        max-width: 50px !important;
+        min-width: 50px !important;
+        width: 50px !important;
+    }
+}

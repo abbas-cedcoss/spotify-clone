@@ -6,7 +6,6 @@ import { AUTH_ENDPOINT, REDIRECT_URI, CLIENT_ID, RESPONSE_TYPE } from '../../env
 const Login = () => {
 
     const navigate = useNavigate();
-    // const [token, setToken] = useState("")
 
     useEffect(() => {
         const hash = window.location.hash
@@ -20,9 +19,6 @@ const Login = () => {
         }
         if (token != null)
             navigate('/panel/home');
-
-        // setToken(token);
-
     }, [])
 
     return (
@@ -46,7 +42,6 @@ const Login = () => {
                 >
                     <Input />
                 </Form.Item>
-
                 <Form.Item
                     label="Password"
                     name="password"
@@ -59,7 +54,6 @@ const Login = () => {
                 >
                     <Input.Password />
                 </Form.Item>
-
                 <Form.Item
                     name="remember"
                     valuePropName="checked"
@@ -70,13 +64,7 @@ const Login = () => {
                 >
                     <Checkbox>Remember me</Checkbox>
                 </Form.Item>
-
-                <Form.Item
-                    wrapperCol={{
-                        offset: 8,
-                        span: 16,
-                    }}
-                >
+                <Form.Item >
                     <Button type="primary" block onClick={() => {
                         window.open(`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`, "_self");
                     }}>

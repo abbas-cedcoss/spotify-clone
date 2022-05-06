@@ -18,9 +18,17 @@ export const request = {
 
 function parseParams(params = {}) {
     let queryString = '';
-    // console.log(JSON.stringify(params))
-    Object.entries(params).filter((element, index) => {
-        queryString += element.toString().replace(',', '=')
-    });
+    if (Object.keys(params).length > 0)
+        Object.entries(params).filter((element, index) => {
+            queryString += element.toString().replace(',', '=') + '&'
+        });
+    else
+        Object.entries(params).filter((element, index) => {
+            queryString += element.toString().replace(',', '=')
+        });
     return queryString;
+}
+
+export function hasToken() {
+    return window.localStorage.getItem('token') === null ? false : true;
 }
