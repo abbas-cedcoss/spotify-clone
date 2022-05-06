@@ -1,10 +1,11 @@
 export default function extractDataFromRequest(data = []) {
     let modifiedRows = [];
     Object.keys(data['albums']['items']).map((element, index) => {
-        let { name, images } = data['albums']['items'][element];
+        let { name, images, artists } = data['albums']['items'][element];
         modifiedRows.push({
             name,
-            images
+            images,
+            artists
         })
     });
     return modifiedRows;
