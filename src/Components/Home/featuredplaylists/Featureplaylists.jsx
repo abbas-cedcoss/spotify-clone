@@ -31,10 +31,12 @@ function Featureplaylists() {
     return <Carousel {...carouselProps} >
       {
         data.map((element, index) => {
-          return <div key={index}>
-            <img src={element['images'][0]['url']} alt={element['name']} width={100} height={100} style={{ boxShadow: '0 0 5px black', borderRadius: '2%' }} />
-            <div title={element['name']} style={{ wordBreak: 'break-all', maxWidth: '60px', }}><p>{element['name'].length > 20 ? element['name'].substring(0, 21) + '...' : element['name']}</p></div>
-          </div>
+          return <Space key={index + 'space'}>
+            <div key={index}>
+              <img src={element['images'][0]['url']} alt={element['name']} width={100} height={100} style={{ boxShadow: '0 0 5px black', borderRadius: '2%' }} />
+              <div title={element['name']} style={{ wordBreak: 'break-all', maxWidth: '60px', }}><p>{element['name'].length > 20 ? element['name'].substring(0, 21) + '...' : element['name']}</p></div>
+            </div>
+          </Space>
         })
       }
     </Carousel>

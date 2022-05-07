@@ -108,14 +108,26 @@ body {
 
     .ant-layout-sider-children,
     .logo {
-        width: 50px !important;
+        width: 70px !important;
     }
 
     .ant-layout-sider,
     .ant-layout-sider-dark {
         flex: none !important;
-        max-width: 50px !important;
-        min-width: 50px !important;
-        width: 50px !important;
+        max-width: 70px !important;
+        min-width: 70px !important;
+        width: 70px !important;
+    }
+
+    .ant-menu-inline.ant-menu-root .ant-menu-item>.ant-menu-title-content,
+    .ant-menu-inline.ant-menu-root .ant-menu-submenu-title>.ant-menu-title-content {
+        display: none;
+    }
+
+    .ant-space-item,
+    .slick-slide t {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
