@@ -7,7 +7,7 @@ import Home from './Components/Home/Home';
 
 function App() {
   return (
-    <div className="App" style={{ padding: '0.5%', boxShadow: '0 0 15px black' }}>
+    <div className="App" style={{ padding: '0.5%' }}>
       <Routes>
         <Route path="*" element={<Navigate to="/panel/login" replace />} />
         <Route path='/panel/login' index element={<Login />} />

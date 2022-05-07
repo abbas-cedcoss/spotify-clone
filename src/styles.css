@@ -30,6 +30,11 @@ body {
     margin: 20%;
 }
 
+.song-details {
+    color: gray;
+    font-size: 12px;
+}
+
 .PlayerRSWP {
     background: rgba(255, 255, 255, 0.35) !important;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -53,13 +58,20 @@ body {
     color: red;
 } */
 
-.core-search{
+.core-search {
     margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 @media screen and (max-width: 540px) {
 
-    .ant-layout-sider-children, .logo {
+    .ant-layout-sider-children,
+    .logo {
         width: 50px !important;
     }
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button, Checkbox, Alert } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { AUTH_ENDPOINT, REDIRECT_URI, CLIENT_ID, RESPONSE_TYPE, isLive } from '../../environment';
 
@@ -19,11 +19,22 @@ const Login = () => {
         }
         if (token != null)
             navigate('/panel/home');
-            console.log(isLive)
-    }, [])
+
+    }, []);
+
+    function renderDescription() {
+        return <span>
+            you are already logged in to your Spotify account in browser <a href="https://docs.google.com/document/d/1ne0broswBabbtVa9KrCy80smdTA_Z5wPktJeSEdIfNg/edit?usp=sharing" target={'_blank'} rel="noreferrer">read docs</a>
+        </span>
+    }
 
     return (
         <div className='core-container'>
+            <Alert
+                type='warning'
+                message='Please make sure:'
+                description={renderDescription()}
+            /><br />
             <Form
                 name="basic"
                 initialValues={{
@@ -73,7 +84,7 @@ const Login = () => {
                     </Button>
                 </Form.Item>
             </Form>
-        </div>
+        </div >
     );
 };
 
