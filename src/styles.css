@@ -44,19 +44,55 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-/* .slick-arrow.slick-prev {
-    position: relative;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    background-color: red;
-    color: red;
+.slick-arrow.slick-prev {
+    position: absolute;
+    top: unset;
+    margin-top: 0;
+    background-image: url("data:image/svg+xml;charset=UTF-8, %3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-left'%3e%3cpolyline points='15 18 9 12 15 6'%3e%3c/polyline%3e%3c/svg%3e");
+    z-index: 99;
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 35px;
+    height: 35px;
+    bottom: -15px;
+    border: 1px solid #BBBFC3;
+    border-radius: 4px 0px 0px 4px;
+    left: 0px;
+    border-right: unset;
 }
 
 .slick-arrow.slick-next {
-    background-color: red;
-    color: red;
-} */
+    background-image: url("data:image/svg+xml;charset=UTF-8, %3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-right'%3e%3cpolyline points='9 18 15 12 9 6'%3e%3c/polyline%3e%3c/svg%3e");
+    position: absolute;
+    left: 35px;
+    top: unset;
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 35px;
+    height: 35px;
+    bottom: -15px;
+    border: 1px solid #BBBFC3;
+    border-radius: 0px 4px 4px 0px;
+    right: unset;
+}
+
+.slick-arrow.slick-prev:hover,
+.slick-arrow.slick-prev:focus {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15px;
+    background-image: url("data:image/svg+xml;charset=UTF-8, %3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-left'%3e%3cpolyline points='15 18 9 12 15 6'%3e%3c/polyline%3e%3c/svg%3e");
+}
+
+.slick-arrow.slick-next:hover,
+.slick-arrow.slick-next:focus {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15px;
+    background-image: url("data:image/svg+xml;charset=UTF-8, %3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-right'%3e%3cpolyline points='9 18 15 12 9 6'%3e%3c/polyline%3e%3c/svg%3e");
+}
 
 .core-search {
     margin-top: 2%;

@@ -9,7 +9,7 @@ function Featureplaylists() {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
   async function getNewReleases() {
-    let data = await getfeaturedplaylists()
+    let data = await getfeaturedplaylists({ limit: 12 })
     if (data.hasOwnProperty('error')) {
       notifications.error('Failed!', data?.error?.message);
       navigate("/panel/login");
